@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+  activeRoute: 'Dashboard' | 'Import';
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -26,11 +27,45 @@ export const Container = styled.div<ContainerProps>`
         & + a {
           margin-left: 32px;
         }
-
-        &:hover {
-          opacity: 0.6;
-        }
       }
+
+      ${props =>
+        props.activeRoute === 'Dashboard'
+          ? css`
+              a:first-child {
+                border-bottom: 2px solid orange;
+                padding-bottom: 10px;
+
+                &:hover {
+                  opacity: 0.6;
+                }
+              }
+
+              a:last-child {
+                opacity: 0.6;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+            `
+          : css`
+              a:first-child {
+                opacity: 0.6;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+              a:last-child {
+                border-bottom: 2px solid orange;
+                padding-bottom: 10px;
+
+                &:hover {
+                  opacity: 0.6;
+                }
+              }
+            `}
     }
   }
 `;
