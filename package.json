@@ -58,7 +58,7 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "prettier": "^2.0.4",
     "react-app-rewired": "^2.1.6",
-    "react-dev-utils": "^10.2.1",
+    "react-dev-utils": "^11.0.4",
     "ts-jest": "^25.4.0"
   }
 }
